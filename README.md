@@ -12,13 +12,13 @@ goos: linux
 goarch: amd64
 pkg: github.com/marcelo-r/clean-code-performance
 cpu: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
-BenchmarkAreaInterface1-12              148383061                7.781 ns/op           0 B/op          0 allocs/op
-BenchmarkAreaEnum1-12                   274662770                4.396 ns/op           0 B/op          0 allocs/op
-BenchmarkAreaTable1-12                  285506127                4.018 ns/op           0 B/op          0 allocs/op
-BenchmarkAreaInterface1000-12             159108              7812 ns/op               0 B/op          0 allocs/op
-BenchmarkAreaEnum1000-12                  305194              3941 ns/op               0 B/op          0 allocs/op
-BenchmarkAreaTable1000-12                 406488              2545 ns/op               0 B/op          0 allocs/op
+BenchmarkAreaPoly1-12           147135076                7.925 ns/op           0 B/op          0 allocs/op
+BenchmarkAreaEnum1-12           250384155                4.559 ns/op           0 B/op          0 allocs/op
+BenchmarkAreaTable1-12          280415721                4.083 ns/op           0 B/op          0 allocs/op
+BenchmarkAreaPoly1000-12          150037              8086 ns/op               0 B/op          0 allocs/op
+BenchmarkAreaEnum1000-12          316341              3796 ns/op               0 B/op          0 allocs/op
+BenchmarkAreaTable1000-12         428775              2772 ns/op               0 B/op          0 allocs/op
 PASS
-ok      github.com/marcelo-r/clean-code-performance     9.791s
+ok      github.com/marcelo-r/clean-code-performance     8.968s
 ```
 

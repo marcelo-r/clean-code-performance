@@ -7,7 +7,7 @@ import (
 	"github.com/marcelo-r/clean-code-performance/polymorphism"
 )
 
-func benchmarkAreaInterface(n int) []polymorphism.Shape {
+func areaPolymorphismList(n int) []polymorphism.Shape {
 	shapes := make([]polymorphism.Shape, 0)
 	for i := 0; i < n; i++ {
 		f := float64(i)
@@ -19,7 +19,7 @@ func benchmarkAreaInterface(n int) []polymorphism.Shape {
 	return shapes
 }
 
-func benchmarkAreaEnum(n int) []*enum.Shape {
+func areaEnumList(n int) []*enum.Shape {
 	shapes := make([]*enum.Shape, 0)
 	for i := 0; i < n; i++ {
 		f := float64(i)
@@ -32,10 +32,10 @@ func benchmarkAreaEnum(n int) []*enum.Shape {
 }
 
 var (
-	shapesNewInterface1    = benchmarkAreaInterface(1)
-	shapesEnum1            = benchmarkAreaEnum(1)
-	shapesNewInterface1000 = benchmarkAreaInterface(1000)
-	shapesEnum1000         = benchmarkAreaEnum(1000)
+	shapesNewInterface1    = areaPolymorphismList(1)
+	shapesEnum1            = areaEnumList(1)
+	shapesNewInterface1000 = areaPolymorphismList(1000)
+	shapesEnum1000         = areaEnumList(1000)
 )
 
 func areaInterface(shapes []polymorphism.Shape) float64 {
@@ -62,7 +62,7 @@ func areaTable(shapes []*enum.Shape) float64 {
 	return area
 }
 
-func BenchmarkAreaInterface1(b *testing.B) {
+func BenchmarkAreaPoly1(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		areaInterface(shapesNewInterface1)
 	}
@@ -80,7 +80,7 @@ func BenchmarkAreaTable1(b *testing.B) {
 	}
 }
 
-func BenchmarkAreaInterface1000(b *testing.B) {
+func BenchmarkAreaPoly1000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		areaInterface(shapesNewInterface1000)
 	}
